@@ -120,7 +120,7 @@ class WP_BOOK {
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once WP_BOOK_PLUGIN_PATH . 'admin/class-plugin-name-admin.php';
+		require_once WP_BOOK_PLUGIN_PATH . 'admin/wp-book-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
