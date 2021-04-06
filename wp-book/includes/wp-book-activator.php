@@ -15,7 +15,7 @@
  * @since      1.0.0
  * @package    WP_BOOK
  * @subpackage WP_BOOK/includes
- * @author     Your Name <email@example.com>
+ * @author     Vraj Rana vrcoder1998@gmail.com
  */
 class WP_BOOK_Activator {
 
@@ -31,7 +31,9 @@ class WP_BOOK_Activator {
 		$default = array();
 		
 		if( ! get_option( 'wp_book_plugin_name' ) ){
+			
 			update_option( 'wp_book_plugin_name', $default );
+		
 		}
 
 	}
