@@ -49,7 +49,7 @@ class SettingApi{
     private $fields = array();
 
     /**
-	 * Set settings array and return instance of this class
+	 * Instantiate settings array and return instance of this class
 	 *
 	 * @since    1.0.0
 	 */
@@ -61,7 +61,7 @@ class SettingApi{
     }
 
     /**
-	 * Set sections array and return instance of this class
+	 * Instantiate sections array and return instance of this class
 	 *
 	 * @since    1.0.0
 	 */
@@ -73,7 +73,7 @@ class SettingApi{
     }
 
     /**
-	 * Set fields array and return instance of this class
+	 * Instantiate fields array and return instance of this class
 	 *
 	 * @since    1.0.0
 	 */
@@ -84,6 +84,11 @@ class SettingApi{
     
     }
 
+    /**
+	 * Using wordpress function register_setting(),add_settings_section() and add_settings_field()
+	 * for using settings api
+	 * @since    1.0.0
+	 */
     public function register_settings_api(){
 
         if( !empty($this->settings)){
