@@ -77,7 +77,6 @@ class WP_BOOK {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
 
 		$this->define_post_type_hooks();
 		$this->define_taxonomy_hooks();
@@ -121,12 +120,6 @@ class WP_BOOK {
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once WP_BOOK_PLUGIN_PATH . 'admin/wp-book-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once WP_BOOK_PLUGIN_PATH . 'public/class-plugin-name-public.php';
 
 		/**
 		 * The class responsible for defining all custom post types of wp-book plugin. 
@@ -206,26 +199,6 @@ class WP_BOOK {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
-	}
-
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
-
-		if( !class_exists('WP_BOOK_Public') ){
-			return;
-		}
-
-		$plugin_public = new WP_BOOK_Public( $this->get_WP_BOOK(), $this->get_version() );
-
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
 
